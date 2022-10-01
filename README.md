@@ -1,2 +1,2 @@
-# MVVM
+# MVVM-Swift
 sample mvvm projects
