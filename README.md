@@ -1,5 +1,6 @@
-# MVVM-Swift
-sample mvvm projects
+# Swift Projects Repo
+
+some projects
 
 Projects: 
   
