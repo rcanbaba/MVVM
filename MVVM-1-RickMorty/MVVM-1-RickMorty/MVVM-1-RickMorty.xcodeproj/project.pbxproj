@@ -19,6 +19,9 @@
 		B463C7DD28E8E4F6002EF326 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B463C7DC28E8E4F6002EF326 /* Alamofire */; };
 		B463C7E028E8E521002EF326 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = B463C7DF28E8E521002EF326 /* AlamofireImage */; };
 		B463C7E228E8EBC5002EF326 /* RMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463C7E128E8EBC5002EF326 /* RMViewModel.swift */; };
+		B463C7E428E9796B002EF326 /* RMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463C7E328E9796B002EF326 /* RMView.swift */; };
+		B463C7E728E98326002EF326 /* RMTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463C7E628E98326002EF326 /* RMTableViewCell.swift */; };
+		B463C7EA28E991F4002EF326 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463C7E928E991F4002EF326 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		B463C7D728E8E375002EF326 /* RMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMModel.swift; sourceTree = "<group>"; };
 		B463C7D928E8E386002EF326 /* RMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMService.swift; sourceTree = "<group>"; };
 		B463C7E128E8EBC5002EF326 /* RMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMViewModel.swift; sourceTree = "<group>"; };
+		B463C7E328E9796B002EF326 /* RMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMView.swift; sourceTree = "<group>"; };
+		B463C7E628E98326002EF326 /* RMTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMTableViewCell.swift; sourceTree = "<group>"; };
+		B463C7E928E991F4002EF326 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,8 @@
 		B463C7B728E8DE3A002EF326 /* MVVM-1-RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				B463C7E828E991E5002EF326 /* Extension */,
+				B463C7E528E982FF002EF326 /* Cell */,
 				B463C7D128E8DEDC002EF326 /* Controller */,
 				B463C7D028E8DECF002EF326 /* View */,
 				B463C7CF28E8DEC6002EF326 /* ViewModel */,
@@ -118,6 +126,7 @@
 		B463C7D028E8DECF002EF326 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B463C7E328E9796B002EF326 /* RMView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +137,22 @@
 				B463C7D228E8DF5C002EF326 /* RMViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B463C7E528E982FF002EF326 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B463C7E628E98326002EF326 /* RMTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B463C7E828E991E5002EF326 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B463C7E928E991F4002EF326 /* UIViewExtensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,9 +238,12 @@
 			files = (
 				B463C7DA28E8E386002EF326 /* RMService.swift in Sources */,
 				B463C7D828E8E375002EF326 /* RMModel.swift in Sources */,
+				B463C7E728E98326002EF326 /* RMTableViewCell.swift in Sources */,
 				B463C7B928E8DE3A002EF326 /* AppDelegate.swift in Sources */,
 				B463C7E228E8EBC5002EF326 /* RMViewModel.swift in Sources */,
 				B463C7BB28E8DE3A002EF326 /* SceneDelegate.swift in Sources */,
+				B463C7E428E9796B002EF326 /* RMView.swift in Sources */,
+				B463C7EA28E991F4002EF326 /* UIViewExtensions.swift in Sources */,
 				B463C7D328E8DF5C002EF326 /* RMViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
