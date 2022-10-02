@@ -22,6 +22,7 @@
 		B463C7E428E9796B002EF326 /* RMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463C7E328E9796B002EF326 /* RMView.swift */; };
 		B463C7E728E98326002EF326 /* RMTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463C7E628E98326002EF326 /* RMTableViewCell.swift */; };
 		B463C7EA28E991F4002EF326 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463C7E928E991F4002EF326 /* UIViewExtensions.swift */; };
+		B463C7EC28E99D46002EF326 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463C7EB28E99D46002EF326 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B463C7E328E9796B002EF326 /* RMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMView.swift; sourceTree = "<group>"; };
 		B463C7E628E98326002EF326 /* RMTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMTableViewCell.swift; sourceTree = "<group>"; };
 		B463C7E928E991F4002EF326 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		B463C7EB28E99D46002EF326 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				B463C7E928E991F4002EF326 /* UIViewExtensions.swift */,
+				B463C7EB28E99D46002EF326 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				B463C7DA28E8E386002EF326 /* RMService.swift in Sources */,
 				B463C7D828E8E375002EF326 /* RMModel.swift in Sources */,
+				B463C7EC28E99D46002EF326 /* StringExtension.swift in Sources */,
 				B463C7E728E98326002EF326 /* RMTableViewCell.swift in Sources */,
 				B463C7B928E8DE3A002EF326 /* AppDelegate.swift in Sources */,
 				B463C7E228E8EBC5002EF326 /* RMViewModel.swift in Sources */,

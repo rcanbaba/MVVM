@@ -13,13 +13,14 @@ class RMTableViewCell: UITableViewCell {
     private lazy var customImage: UIImageView = {
         var imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .blue
         return imageView
     }()
     
     private lazy var titleLabel: UILabel = {
         var label = UILabel()
         label.numberOfLines = 1
-        label.textColor = .black
+        label.textColor = .systemPink
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 18.0, weight: .semibold)
         return label
@@ -28,7 +29,7 @@ class RMTableViewCell: UITableViewCell {
     private lazy var descriptionLabel: UILabel = {
         var label = UILabel()
         label.numberOfLines = 0
-        label.textColor = .brown
+        label.textColor = .systemPurple
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
         return label
@@ -39,6 +40,7 @@ class RMTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
+        ImageResponseSerializer.addAcceptableImageContentTypes(["binary/octet-stream"])
     }
     
     required init?(coder: NSCoder) {
@@ -48,22 +50,24 @@ class RMTableViewCell: UITableViewCell {
     private func configureUI() {
         addSubview(customImage)
         customImage.snp.makeConstraints { (make) in
-            make.height.equalTo(100)
-            make.top.equalTo(contentView)
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalToSuperview().inset(16)
+            make.size.equalTo(100)
+            make.centerY.equalToSuperview()
         }
         
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(customImage.snp.bottom).offset(10)
-            make.leading.trailing.equalTo(contentView)
+            make.top.equalToSuperview().inset(16)
+            make.leading.equalTo(customImage.snp.trailing).offset(8)
+            make.trailing.equalToSuperview().inset(16)
         }
         
         addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel).offset(5)
-            make.leading.trailing.equalTo(titleLabel)
-            make.bottom.equalToSuperview()
+            make.top.equalTo(titleLabel).offset(6)
+            make.leading.equalTo(customImage.snp.trailing).offset(8)
+            make.trailing.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(8)
         }
     }
 
@@ -78,6 +82,7 @@ extension RMTableViewCell {
         descriptionLabel.text = description
     }
     public func set(imageUrl: String?) {
+        //TODO: there was an AFImage bug, try later Kingfisher
         customImage.af.setImage(withURL: URL(string: imageUrl ?? randomImage) ?? URL(string: randomImage)!)
     }
     

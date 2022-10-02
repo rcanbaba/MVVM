@@ -20,7 +20,7 @@ final class RMViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        view.backgroundColor = .systemGreen
         rickMortyView.tableView.delegate = self
         rickMortyView.tableView.dataSource = self
         configureUI()
@@ -69,15 +69,12 @@ extension RMViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell: RMTableViewCell = tableView.dequeueReusableCell(withIdentifier: RMTableViewCell.Identifier.custom.rawValue) as? RMTableViewCell else {
-//            return UITableViewCell()
-//        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: RMTableViewCell.reuseIdentifier, for: indexPath) as! RMTableViewCell
-        
+        guard let cell: RMTableViewCell = tableView.dequeueReusableCell(withIdentifier: RMTableViewCell.reuseIdentifier) as? RMTableViewCell else {
+            return UITableViewCell()
+        }
         let cellData = characterArray[indexPath.row]
         cell.set(title: cellData.name ?? "no name")
-        cell.set(description: cellData.status?.rawValue ?? "unknown status")
+        cell.set(description: cellData.status?.rawValue ?? "Unknown")
         cell.set(imageUrl: cellData.url)
         return cell
     }
