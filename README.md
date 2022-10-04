@@ -6,4 +6,5 @@ Projects:
   
 1. RickMorty:
   - Swift, UIKit, MVVM
-  - SPM: Alamofire, AlamofireImage SnapKit
+  - protocol oriented network layer
+  - SPM: Alamofire, AlamofireImage, SnapKit
