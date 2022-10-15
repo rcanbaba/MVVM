@@ -16,4 +16,14 @@ struct Result: Codable {
     let popularity: Double?
     let posterPath, releaseDate, title: String?
     let voteAverage: Double?
+    
+    enum CodingKeys: String, CodingKey {
+        case originalTitle = "original_title"
+        case overview
+        case popularity
+        case posterPath = "poster_path"
+        case releaseDate = "release_date"
+        case title
+        case voteAverage = "vote_average"
+    }
 }
