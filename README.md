@@ -9,6 +9,8 @@ Projects:
   - Protocol oriented network layer
   - SPM: Alamofire, AlamofireImage, SnapKit
 
+----
+
 2. Movies:
   - Compositional Layout
   - Swift, UIKit, MVVM
