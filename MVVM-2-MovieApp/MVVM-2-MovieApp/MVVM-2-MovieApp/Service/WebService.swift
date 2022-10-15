@@ -11,13 +11,12 @@ protocol ServiceProtocol {
     func fetchMovies(onSuccess: @escaping (Movies?) -> (), onError: @escaping (AFError) -> ())
 }
 
-final class Service: ServiceProtocol {
+final class Services: ServiceProtocol {
     func fetchMovies(onSuccess: @escaping (Movies?) -> (), onError: @escaping (AFError) -> ()) {
         ServiceManager.shared.fetch(path: Constant.ServiceEndpoint.fetchMovies()) { (response: Movies) in
             onSuccess(response)
         } onError: { error in
             onError(error)
         }
-
     }
 }

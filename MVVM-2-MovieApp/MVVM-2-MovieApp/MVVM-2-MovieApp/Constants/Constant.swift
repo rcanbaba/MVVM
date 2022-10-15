@@ -20,7 +20,7 @@ extension Constant {
         case API_KEY = "api_key=f73bb57f5d978cd566999c467673d266"
         
         static func fetchMovies() -> String {
-            "\(BASE_URL)discover/movie?\(API_KEY)"
+            "\(BASE_URL.rawValue)discover/movie?\(API_KEY.rawValue)"
         }
     }
     
