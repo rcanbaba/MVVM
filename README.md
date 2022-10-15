@@ -8,3 +8,8 @@ Projects:
   - Swift, UIKit, MVVM
   - protocol oriented network layer
   - SPM: Alamofire, AlamofireImage, SnapKit
+
+2. Movies:
+  - Swift, UIKit, MVVM
+  - protocol oriented network layer
+  - SPM: Alamofire, KingFisher, SnapKit
