@@ -1,4 +1,4 @@
-/// Copyright (c) 2019 Razeware LLC
+/// Copyright (c) 2022 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -18,6 +18,10 @@
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
 /// 
+/// This project and source code may use libraries or frameworks that are
+/// released under various Open-Source licenses. Use of those libraries and
+/// frameworks are governed by their own individual licenses.
+///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 /// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -26,55 +30,25 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import UIKit
+import Foundation
 
-class WeatherViewController: UIViewController {
+final class Box<T> {
   
-  private let viewModel = WeatherViewModel()
+  typealias Listener = (T) -> Void
+  var listener: Listener?
   
-  @IBOutlet weak var cityLabel: UILabel!
-  @IBOutlet weak var dateLabel: UILabel!
-  @IBOutlet weak var currentIcon: UIImageView!
-  @IBOutlet weak var currentSummaryLabel: UILabel!
-  @IBOutlet weak var forecastSummary: UITextView!
-  
-  override func viewDidLoad() {
-    viewModel.locationName.bind { [weak self] locationName in
-      self?.cityLabel.text = locationName
-    }
-    
-    viewModel.date.bind { [weak self] date in
-      self?.dateLabel.text = date
-    }
-    
-    viewModel.icon.bind { [weak self] image in
-      self?.currentIcon.image = image
-    }
-        
-    viewModel.summary.bind { [weak self] summary in
-      self?.currentSummaryLabel.text = summary
-    }
-        
-    viewModel.forecastSummary.bind { [weak self] forecast in
-      self?.forecastSummary.text = forecast
+  var value: T {
+    didSet {
+      listener?(value)
     }
   }
-  @IBAction func promptForLocation(_ sender: Any) {
-    let alert = UIAlertController(
-      title: "Choose location",
-      message: nil,
-      preferredStyle: .alert)
-    alert.addTextField()
-    //2
-    let submitAction = UIAlertAction(
-      title: "Submit",
-      style: .default) { [unowned alert, weak self] _ in
-        guard let newLocation = alert.textFields?.first?.text else { return }
-        self?.viewModel.changeLocation(to: newLocation)
-    }
-    alert.addAction(submitAction)
-    //3
-    present(alert, animated: true)
+  
+  init(_ value: T) {
+    self.value = value
   }
   
+  func bind(listener: Listener?) {
+    self.listener = listener
+    listener?(value)
+  }
 }
